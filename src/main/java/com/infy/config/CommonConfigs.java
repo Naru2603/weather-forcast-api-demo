@@ -12,11 +12,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
+import org.springframework.retry.annotation.EnableRetry;
 import org.springframework.web.reactive.function.client.WebClient;
 
 import com.infy.util.CountryCodeConverter;
 
 @Configuration
+@EnableRetry
 public class CommonConfigs {
 
 	@Value("${api.url}")

@@ -2,6 +2,7 @@ package com.infy.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +27,14 @@ public class WeatherController {
 	public String hello()
 	{
 		return "welcome to weather forcasting api!!";
+	}
+	
+	@GetMapping("/weathers/{city}")
+	public Mono<Climate> getWeatherByCity(@PathVariable String city)
+	{
+		log.info("Request received to get weather of {} city",city);
+		return weatherService.getWeatherByCity(city);
+		
 	}
 	
 	@PostMapping("/weathers")
