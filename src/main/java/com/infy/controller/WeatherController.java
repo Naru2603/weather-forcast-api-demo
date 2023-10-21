@@ -34,7 +34,6 @@ public class WeatherController {
 	{
 		log.info("Request received to get weather of {} city",city);
 		return weatherService.getWeatherByCity(city);
-		
 	}
 	
 	@PostMapping("/weathers")

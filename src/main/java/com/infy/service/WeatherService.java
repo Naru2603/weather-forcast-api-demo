@@ -9,7 +9,6 @@ import reactor.core.publisher.Mono;
 
 public interface WeatherService {
 	
-
 	public Mono<Climate> createWeather(Weather weather); 
 
 	public Mono<Climate> getWeatherByCity(String city); 

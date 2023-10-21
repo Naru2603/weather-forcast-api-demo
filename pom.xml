@@ -60,6 +60,7 @@
 			<artifactId>spring-aspects</artifactId>
 		</dependency>
 		
+		
 		<dependency>
 			<groupId>net.sf.dozer</groupId>
 			<artifactId>dozer</artifactId>

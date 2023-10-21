@@ -29,7 +29,6 @@ public class CommonConfigs {
 
 		WebClient webClient = WebClient.builder().baseUrl(climateBaseUrl)
 				.defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE).build();
-
 		return webClient;
 	}
 

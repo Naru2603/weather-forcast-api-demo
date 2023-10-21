@@ -81,8 +81,8 @@ public class WeatherServiceImpl implements WeatherService {
 				.retrieve()
 				.bodyToMono(Climate.class)
 				.retryWhen(Retry
-                        .backoff(3, Duration.ofSeconds(2))  // Retry 3 times with a 2-second delay
-                        .maxBackoff(Duration.ofSeconds(10))   // Maximum backoff duration
+                        .backoff(3, Duration.ofSeconds(2))    // Retry 3 times with a 2-second delay
+                        .maxBackoff(Duration.ofSeconds(10))      // Maximum backoff duration
                 )
 				.onErrorResume(Throwable.class, this::handleRecovery);
 		return weatherMono;
